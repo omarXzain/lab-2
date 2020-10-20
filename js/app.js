@@ -41,7 +41,7 @@ $(document).ready(function () {
     dataType: 'json'
   };
 
-  $.ajax('../data/page-1.json', ajaxSettings).then(data => {
+  $.ajax('data/page-1.json', ajaxSettings).then(data => {
 
     data.forEach(myZoo => {
       let pet = new ZooGallery(myZoo);
