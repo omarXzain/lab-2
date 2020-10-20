@@ -1,0 +1,27 @@
+img{
+    width: 340px;
+    height: 340px;
+    border: 5px black double;
+    border-radius: 12px;
+    margin-top: 3%;
+}
+
+.firstIMG {
+    margin-top: 0%;
+}
+
+.picStyle{
+ 
+    border: black double 2px;
+    width: 80%;
+    margin-left: 11%;
+    text-align: center;
+    float: left;
+    border-radius: 20px;
+    background-color: rgb(80, 127, 172);
+
+}main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
