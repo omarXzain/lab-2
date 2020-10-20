@@ -1,0 +1,14 @@
+p,b{
+    font-size: 25px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+select {
+    width: 137px;
+    height: 31px;
+    margin-bottom: 2%;
+}
+
+b{
+    margin-bottom: 6%;
+}

@@ -2,4 +2,22 @@
 
 body{
     font-family: 'Yanone Kaffeesatz', sans-serif;
+    background-color: rgb(209, 49, 182);
 }
+
+
+h1{
+    font-size: 44px;
+    font-weight: bold;
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  h2{
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .photo-template{
+      display: none;
+  }
