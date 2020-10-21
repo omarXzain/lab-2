@@ -1,14 +1,53 @@
-p,b{
+p{
+    font-size: 25px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+span{
+    font-size: 20px;
+    margin-top: 2%;
+}
+select {
+    width: 137px;
+    height: 31px;
+    
+} 
+
+b{
+    margin-bottom: 6%;
     font-size: 25px;
     font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
-select {
-    width: 137px;
-    height: 31px;
-    margin-bottom: 2%;
+.ANM{
+    animation: zooStyle 1.5s;
+    
 }
 
-b{
-    margin-bottom: 6%;
+
+@keyframes zooStyle {
+
+from{
+    opacity: 0;
+     transform: scale(50deg);
+     transition: 1000ms;
+}
+
+
+
+100%{
+
+    opacity: 5;
+
+    transform: matrix(0,1,1,2,1.1,0);
+    transition: 1000ms;
+}
+
+
+
+
+
+
+    
 }

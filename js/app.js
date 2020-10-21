@@ -17,48 +17,67 @@ $(document).ready(function () {
   //===========================================
 
   ZooGallery.prototype.picViewer = function () {
-
-    let myAnimal = $('.photo-template').clone();
-    $('main').append(myAnimal);
     let Options = $('<option></option>').text(this.keyword);
     $('select').append(Options);
-
-    myAnimal.find('h2').text(this.title);
-    myAnimal.find('img').attr('src', this.image_url);
-    myAnimal.find('p').text(this.description);
-    myAnimal.find('.p2').text(this.keyword);
-    myAnimal.find('b').text(`Horns Number: ${this.horns}`);
-    myAnimal.attr('class', this.keyword);
-
+    
+    let Template = $('#myTemplate').html();
+    let htmlText = Mustache.render(Template, this);
+    $('#second-page').append(htmlText);
+    
   };
 
-  //=============================================
+ //============================================
 
-
-  //   ajax setup
+  // ajax setup
   const ajaxSettings = {
     method: 'get',
     dataType: 'json'
   };
 
-  $.ajax('data/page-1.json', ajaxSettings).then(data => {
+  const pageView = (pageNum) => {
 
+  
+  $.ajax(`data/page-${pageNum}.json`, ajaxSettings).then(data => {
+
+  
     data.forEach(myZoo => {
       let pet = new ZooGallery(myZoo);
       pet.picViewer();
     });
   });
+ };
+ pageView(1);
 
-// keyword filter
+
+ // keyword filter
   $('select').on('change', function(){
     let selected = this.value;
-    $('section').hide();
+    $('#second-page').hide();
     $(`.${selected}`).show();
   });
+
+
+
+ const changer = () =>{
+  $('.page1').on('click', function(){
+    $('#second-page').hide('');
+    $('#second-page').show('');
+    // $('#second-page').toggle('.ANM');
+    $('#second-page').html('');
+    pageView(1);
+  });
+
+  $('.page2').on('click', function(){
+    $('#second-page').hide("");
+    $('#second-page').show("");
+    $('#second-page').html("");
+    pageView(2);
+  });
+ }
+ changer();
+
+ //====================================================
 });
-
-//====================================================
-
 
 
 
